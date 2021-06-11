@@ -11,7 +11,10 @@ public class PlayerControler : MonoBehaviour
     [SerializeField]
     protected float speed = 10f;
     protected float horizontalInput;
-    protected float xRange = 16;
+    protected float verticalInput;
+    protected float xRange = 18f;
+    protected float zRangeUp = 23f;
+    protected float zRangeDown = -3f;
 
     //Make player stop when reaching a certain position
     public void stopPlayer()
@@ -20,9 +23,17 @@ public class PlayerControler : MonoBehaviour
         {
             player.transform.position = new Vector3(xRange, player.transform.position.y, player.transform.position.z);
         }
-        else if (player.transform.position.x < -xRange)
+        if (player.transform.position.x < -xRange)
         {
             player.transform.position = new Vector3(-xRange, player.transform.position.y, player.transform.position.z);
+        }
+        if (player.transform.position.z > zRangeUp )
+        {
+            player.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, zRangeUp);
+        }
+        if( player.transform.position.z < zRangeDown)
+        {
+            player.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, zRangeDown);
         }
     }
 
@@ -31,8 +42,16 @@ public class PlayerControler : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(Bananas, transform.position, Bananas.transform.rotation);
+            Instantiate(Bananas, new Vector3(this.transform.position.x, this.transform.position.y + 1.5f, this.transform.position.z + 1.5f), Bananas.transform.rotation);
         }
+    }
+
+    public void playerMoving()
+    {
+        horizontalInput = Input.GetAxisRaw("Horizontal");
+        verticalInput = Input.GetAxisRaw("Vertical");
+        player.transform.Translate(Vector3.right * speed * horizontalInput * Time.deltaTime);
+        player.transform.Translate(Vector3.forward * speed * verticalInput * Time.deltaTime);
     }
 
     // Start is called before the first frame update
@@ -44,8 +63,7 @@ public class PlayerControler : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
-        player.transform.Translate(Vector3.right * speed * horizontalInput * Time.deltaTime);
+        playerMoving();
         stopPlayer();
         throwFoods();
     }

@@ -6,8 +6,11 @@ public class DetectCollision : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(this.gameObject);
-        Destroy(other.gameObject);
+        if (other.gameObject.CompareTag("Foods"))
+        {
+            Destroy(this.gameObject);
+            Destroy(other.gameObject);
+        }
     }
     // Start is called before the first frame update
     void Start()

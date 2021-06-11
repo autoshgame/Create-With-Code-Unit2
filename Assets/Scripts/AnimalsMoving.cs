@@ -7,31 +7,31 @@ public class AnimalsMoving : MonoBehaviour
     [SerializeField] protected GameObject animals;
     [SerializeField] protected float speed = 10f;
     protected float topBound = 23f;
-    protected float downBound = -8f;
-    protected float rightBound = 16f;
-    protected float leftBound = -16f;
+    protected float downBound = -4f;
+    protected float rightBound = 22f;
+    protected float leftBound = -22f;
 
     public void clearAnimals()
     {
         if (animals.transform.position.z > topBound)
         {
             Destroy(animals);
-            Debug.Log("Destroy Animals");
+            
         }
         if (animals.transform.position.z < downBound)
         {
             Destroy(animals);
-            Debug.Log("Destroy Animals");
+           
         }
         if (animals.transform.position.x > rightBound)
         {
             Destroy(animals);
-            Debug.Log("Destroy Animals");
+           
         }
         if (animals.transform.position.x < leftBound)
         {
             Destroy(animals);
-            Debug.Log("Destroy Animals");
+            
         }
     }
 

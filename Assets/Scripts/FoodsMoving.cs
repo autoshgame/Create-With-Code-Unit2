@@ -10,13 +10,11 @@ public class FoodsMoving : MonoBehaviour
     protected float speed = 10f;
     protected float topBound = 23f;
 
-
     private void clearFoods()
     {
         if(foods.transform.position.z > topBound)
         {
             Destroy(foods);
-            Debug.Log("food is destroyed");
         }
     }
 
