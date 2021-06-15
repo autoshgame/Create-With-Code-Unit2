@@ -1,20 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerControler : MonoBehaviour
 {
-    [SerializeField]
-    protected GameObject player;
-    [SerializeField]
-    protected GameObject Bananas;
-    [SerializeField]
+    [SerializeField] protected GameObject player;
+    [SerializeField] protected GameObject foods;
+    
     protected float speed = 10f;
     protected float horizontalInput;
     protected float verticalInput;
     protected float xRange = 18f;
     protected float zRangeUp = 23f;
     protected float zRangeDown = -3f;
+    protected float points = 0f;
+
+
+
+    [SerializeField] protected Text playerPoints;
+
 
     //Make player stop when reaching a certain position
     public void stopPlayer()
@@ -42,7 +47,7 @@ public class PlayerControler : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(Bananas, new Vector3(this.transform.position.x, this.transform.position.y + 1.5f, this.transform.position.z + 1.5f), Bananas.transform.rotation);
+            Instantiate(foods, new Vector3(this.transform.position.x, this.transform.position.y + 1.5f, this.transform.position.z + 1.5f), foods.transform.rotation);
         }
     }
 
@@ -66,6 +71,12 @@ public class PlayerControler : MonoBehaviour
         playerMoving();
         stopPlayer();
         throwFoods();
+    }
+    
+    
+    public void OnGUI()
+    {
+        playerPoints.text = points.ToString();
     }
 
 }

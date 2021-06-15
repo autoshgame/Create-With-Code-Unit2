@@ -29,6 +29,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.50622404, y: 0.47573793, z: 0.4844519}
   m_Center: {x: 0, y: 0.009565257, z: 0.021385126}
+--- !u!114 &-7646533033696382850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1376524300498738075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 442c8f0a6fb3d0a47ac29da588eca0b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalPoints: 0
+  playerPoints: {fileID: 0}
 --- !u!114 &1465568371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43,6 +57,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foods: {fileID: 1376524300498738075}
   speed: 10
+--- !u!114 &1225314762153894625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1376524300498738075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 442c8f0a6fb3d0a47ac29da588eca0b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalPoints: 0
+  playerPoints: {fileID: 0}
 --- !u!1001 &1377631834704663869
 PrefabInstance:
   m_ObjectHideFlags: 0

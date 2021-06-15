@@ -9,7 +9,12 @@ public class Lives : MonoBehaviour
     [SerializeField] protected Text NumberOfLives;
     private void OnTriggerEnter(Collider other)
     {
-        lives--;
+        if (lives == 0)
+        {
+            Debug.Log("You are dead");
+        }
+        else
+            lives--;
     }
     // Start is called before the first frame update
     void Start()
@@ -20,10 +25,7 @@ public class Lives : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(lives == 0)
-        {
-            Debug.Log("You are dead");
-        }
+       
     }
     private void OnGUI()
     {

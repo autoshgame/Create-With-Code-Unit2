@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class FoodsMoving : MonoBehaviour
 {
-    [SerializeField]
-    protected GameObject foods;
-    [SerializeField]
-    protected float speed = 10f;
+    [SerializeField] protected GameObject foods;
+    [SerializeField] protected float speed = 10f;
     protected float topBound = 23f;
 
     private void clearFoods()
